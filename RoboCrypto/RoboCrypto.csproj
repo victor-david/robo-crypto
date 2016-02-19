@@ -90,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SecurityDriven.Inferno\SecurityDriven.Inferno.csproj">
