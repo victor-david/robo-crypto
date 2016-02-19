@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Xam.Applications.RoboCrypto.Common;
+using System.Reflection;
 
 namespace Xam.Applications.RoboCrypto
 {
@@ -35,17 +36,21 @@ namespace Xam.Applications.RoboCrypto
         /// <param name="args">The args</param>
         static void MainMain(string[] args)
         {
+            var a = Assembly.GetExecutingAssembly().GetName();
+            Console.WriteLine(String.Format("{0} v{1}", a.Name, a.Version));
+            
             Options ops = new Options(args);
-
             if (ops.HaveArgs)
             {
-                Console.WriteLine(ops.ToString());
+                if (ops.Header)
+                {
+                    Console.WriteLine(ops.ToString());
+                }
                 MainExecution main = new MainExecution(ops);
                 main.Execute();
             }
             else
             {
-                Console.WriteLine(ops.ToString());
                 Console.WriteLine(ops.OptionUsageStr());
             }
         }

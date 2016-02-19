@@ -6,6 +6,7 @@ using System.Text;
 using Xam.Applications.RoboCrypto.Crypt;
 using Xam.Applications.RoboCrypto.Sync;
 using Xam.Applications.RoboCrypto.Resources;
+using System.Reflection;
 
 namespace Xam.Applications.RoboCrypto.Common
 {
@@ -31,6 +32,7 @@ namespace Xam.Applications.RoboCrypto.Common
         private const string ForceOp2 = "/ft";
         private const string VeboseOp = "/v";
         private const string TestOp = "/t";
+        private const string NoHeaderOp = "/nh";
         private HashMode hash;
         private ForceMode force;
         #endregion
@@ -117,9 +119,18 @@ namespace Xam.Applications.RoboCrypto.Common
         }
 
         /// <summary>
-        /// Gets a boolean value that indicates if output should be verbose,
+        /// Gets a boolean value that indicates if output should be verbose.
         /// </summary>
         public bool Verbose
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// Gets a boolean value that determines if an options summary is displayed at app startup.
+        /// </summary>
+        public bool Header
         {
             get;
             private set;
@@ -151,6 +162,7 @@ namespace Xam.Applications.RoboCrypto.Common
             Hash = HashMode.Yes;
             force = ForceMode.None;
             Verbose = false;
+            Header = true;
             ParseArgs(args);
         }
         #endregion
@@ -159,20 +171,20 @@ namespace Xam.Applications.RoboCrypto.Common
 
         #region Public Methods
         /// <summary>
-        /// Gets the string to display option usage
+        /// Gets the string to display option usage.
         /// </summary>
         /// <returns>the string</returns>
         public string OptionUsageStr()
         {
             StringBuilder b = new StringBuilder(512);
-            b.AppendLine("RoboCrypto - Synchronizes source and target with encryption");
-            b.AppendLine("Usage: RoboCrypto sourceDir targetDir keyFile /e | /d [options]");
-            b.AppendLine("  /e Encrypt");
-            b.AppendLine("  /d Decrypt");
-            // b.AppendLine("  /h Hash file and directory names");
-            b.AppendLine("  /f[t] Force encryption whether source has changed or not. /ft changes timestamp on source");
-            b.AppendLine("  /v Verbose");
-            b.AppendLine("  /t Test, no actual changes");
+            b.AppendLine(String.Format("Usage: {0} sourceDir targetDir keyFile /e | /d [options]", Assembly.GetExecutingAssembly().GetName().Name));
+            b.AppendLine(" /e  Encrypt");
+            b.AppendLine(" /d  Decrypt");
+            b.AppendLine(" /f  Force encryption whether source has changed or not");
+            b.AppendLine(" /ft Force encryption and change timestamp on source");
+            b.AppendLine(" /v  Verbose");
+            b.AppendLine(" /nh Don't show the options header");
+            b.AppendLine(" /t  Test, no actual changes");
             return b.ToString();
         }
 
@@ -264,6 +276,7 @@ namespace Xam.Applications.RoboCrypto.Common
                     if (arg.StartsWith(ForceOp1)) force = ForceMode.ForceEncryption;
                     if (arg.StartsWith(ForceOp2)) force = ForceMode.ForceEncryptionWithTimestamp;
                     if (arg.StartsWith(VeboseOp)) Verbose = true;
+                    if (arg.StartsWith(NoHeaderOp)) Header = false;
                     if (arg.StartsWith(TestOp)) Test = true;
                 }
             }
