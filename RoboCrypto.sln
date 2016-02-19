@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboCrypto", "RoboCrypto\RoboCrypto.csproj", "{1909FDE6-7F96-42D4-AF58-78FE77516CFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityDriven.Inferno", "SecurityDriven.Inferno\SecurityDriven.Inferno.csproj", "{702DF1B0-D713-4D8C-AF5D-A97049FFD918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyGen", "KeyGen\KeyGen.csproj", "{2E5AB312-C120-4F45-93FE-EF1B9881B642}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1909FDE6-7F96-42D4-AF58-78FE77516CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1909FDE6-7F96-42D4-AF58-78FE77516CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1909FDE6-7F96-42D4-AF58-78FE77516CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1909FDE6-7F96-42D4-AF58-78FE77516CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{702DF1B0-D713-4D8C-AF5D-A97049FFD918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{702DF1B0-D713-4D8C-AF5D-A97049FFD918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{702DF1B0-D713-4D8C-AF5D-A97049FFD918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{702DF1B0-D713-4D8C-AF5D-A97049FFD918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E5AB312-C120-4F45-93FE-EF1B9881B642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E5AB312-C120-4F45-93FE-EF1B9881B642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E5AB312-C120-4F45-93FE-EF1B9881B642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E5AB312-C120-4F45-93FE-EF1B9881B642}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

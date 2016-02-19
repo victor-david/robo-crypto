@@ -1,0 +1,5 @@
+Test.Parameters.txt
+install.cmd
+*.suo
+obj/
+bin/

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{702DF1B0-D713-4D8C-AF5D-A97049FFD918}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SecurityDriven.Inferno</RootNamespace>
+    <AssemblyName>SecurityDriven.Inferno</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cipher\AesCtrCryptoTransform.cs" />
+    <Compile Include="Cipher\AesFactories.cs" />
+    <Compile Include="CryptoRandom.cs" />
+    <Compile Include="EtM_CBC.cs" />
+    <Compile Include="EtM_CTR.cs" />
+    <Compile Include="EtM_Transforms.cs" />
+    <Compile Include="Extensions\B64Extensions.cs" />
+    <Compile Include="Extensions\Base16Config.cs" />
+    <Compile Include="Extensions\Base16Extensions.cs" />
+    <Compile Include="Extensions\Base32Config.cs" />
+    <Compile Include="Extensions\Base32Extensions.cs" />
+    <Compile Include="Extensions\ByteArrayExtensions.cs" />
+    <Compile Include="Extensions\CngKeyExtensions.cs" />
+    <Compile Include="Extensions\SerializationExtensions.cs" />
+    <Compile Include="Hash\HashFactories.cs" />
+    <Compile Include="Kdf\HKDF.cs" />
+    <Compile Include="Kdf\PBKDF2.cs" />
+    <Compile Include="Kdf\SP800_108_Ctr.cs" />
+    <Compile Include="Mac\HMAC2.cs" />
+    <Compile Include="Mac\HMACFactories.cs" />
+    <Compile Include="Otp\TOTP.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuiteB.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
