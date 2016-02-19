@@ -13,7 +13,9 @@ For instance, when encrypting:
 RoboCrypto C:\MySource C:\MyTarget H:\MyKeyFile.bin /e
 
 C:\MySource\SecretFiles\FinanceReport.xlsx
+
 becomes
+
 C:\MyTarget\d9e8fb147ef70faa\6097aeb067f3d1c10f51ca8d.aes
 
 The folder used as the target root is not hashed.
