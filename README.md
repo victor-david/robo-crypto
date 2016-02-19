@@ -59,14 +59,19 @@ as part of my automated incremental backup. I prefer to push things to the cloud
 directly in my Dropbox directory. Instead, I run a batch file at the end of the day:
 
 backup.cmd
-==========
+
 rem RoboCopy to copy only new and changed files
+
 RoboCopy D:\MyFiles E:\Dropbox\MyFiles /E /R:2 /W:3 /NJH /NJS /NDL /NP /NS /TS /XJ /XO
+
 RoboCopy (other directories) etc.
 
 rem See if the USB stick is there
+
 if exist H:\MyKeyFile.bin (
+
   RoboCrypto D:\MyConfidentialFiles E:\Dropbox\MyEncryptedFiles H:\MyKeyFile.bin /e
+
 )
 
 ##Key Generation
