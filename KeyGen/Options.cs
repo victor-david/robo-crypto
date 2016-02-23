@@ -93,7 +93,7 @@ namespace Xam.Applications.RoboCrypto.KeyGen
 
         /************************************************************************/
 
-        #region Constrcutor
+        #region Constructor
         public Options(string[] args)
         {
             GenerateKeyBytesCount = GenerateKeyBytesCountDefault;

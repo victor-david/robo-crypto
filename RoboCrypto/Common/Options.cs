@@ -223,10 +223,14 @@ namespace Xam.Applications.RoboCrypto.Common
                 throw new InvalidOperationException(Strings.TargetNotDirectory);
             }
 
-            // TODO: Make sure one is not within the other.
             if (Source.FullName == Target.FullName)
             {
                 throw new InvalidOperationException(Strings.SourceAndTargetSame);
+            }
+
+            if (Source.Includes(Target) || Target.Includes(Source))
+            {
+                throw new InvalidOperationException(Strings.SourceAndTargetNested);
             }
 
             if (!KeyFile.Exists)

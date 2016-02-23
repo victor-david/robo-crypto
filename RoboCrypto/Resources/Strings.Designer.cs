@@ -205,6 +205,15 @@ namespace Xam.Applications.RoboCrypto.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The source and target directories cannot be within one another.
+        /// </summary>
+        internal static string SourceAndTargetNested {
+            get {
+                return ResourceManager.GetString("SourceAndTargetNested", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Source and Target are the same, that wouldn&apos;t work out too well.
         /// </summary>
         internal static string SourceAndTargetSame {

@@ -165,6 +165,9 @@
   <data name="SavingEncryptedFile" xml:space="preserve">
     <value>Saving encrypted file: {0}</value>
   </data>
+  <data name="SourceAndTargetNested" xml:space="preserve">
+    <value>The source and target directories cannot be within one another</value>
+  </data>
   <data name="SourceAndTargetSame" xml:space="preserve">
     <value>Source and Target are the same, that wouldn't work out too well</value>
   </data>
